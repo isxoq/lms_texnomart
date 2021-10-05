@@ -1,0 +1,23 @@
+{
+  "name": "valery-lavrik/yii2-settings",
+  "description": "Yii2 settings with database module with GUI manager supported",
+  "type": "yii2-extension",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "John Martin",
+      "email": "john.itvn@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "yiisoft/yii2": "*",
+    "johnitvn/yii2-ajaxcrud": "*",
+    "kartik-v/yii2-widget-select2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "johnitvn\\settings\\": "src/"
+    }
+  }
+}

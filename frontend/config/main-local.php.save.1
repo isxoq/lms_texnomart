@@ -1,0 +1,28 @@
+
+<?php
+
+$config = [
+    'components' => [
+        'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => 'uea5948yugleiyr237',
+        ],
+    ],
+];
+
+
+   $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+        'allowedIPs' => ['37.110.211.83'],
+        'checkAccessCallback' => function( ){
+		
+		return true;
+           if(Yii::$app->user->isGuest){
+               return false;
+               }
+            return Yii::$app->user->identity->username == 'odilov';
+        }
+    ];
+
+return $config;

@@ -1,0 +1,1 @@
+<?php 	const BR = "<br>";	const HR = "<hr>";	const SP = " ";

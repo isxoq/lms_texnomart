@@ -1,0 +1,82 @@
+.modal-header .close{
+    margin-left: 0;
+    line-height: 35px;
+    font-size: x-large;
+}
+.main-body .page-wrapper .page-header-title span {
+    text-transform: inherit;
+}
+
+/*
+* Custom adminty elements for `Start` actions
+*/
+
+.start-card{
+    margin-bottom: 3px;
+
+}
+
+.start-card .start-card-header{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.start-card .start-card-body{
+    padding: 5px;
+}
+
+.start-card .start-card-body .list-group a{
+    border: 0;
+    padding: 10px;
+    border-radius: .25rem;
+}
+
+.start-card .start-card-body .list-group a .right-text{
+    float: right;
+}
+.start-pills .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #01a9ac;
+    border-bottom: 0;
+}
+.start-pills .nav-pills .nav-link.active:focus,
+.start-pills .nav-pills .nav-link.active:hover,
+.start-pills .nav-pills .nav-link.active:focus,
+.start-pills .nav-pills .nav-link.active:hover,
+.start-pills .nav-pills .nav-link.active.active:focus,
+.start-pills .nav-pills .nav-link.active.active:hover {
+    color: #fff;
+    text-align: center;
+    border-bottom: 0;
+}
+
+
+.start-pills .nav-pills .nav-item{
+    margin-left: 5px;
+}
+
+.disabled-next-lesson{
+    cursor: not-allowed;
+    color: #919aa3!important;
+}
+
+
+.table.table-sm td, .table.table-sm th  {
+    padding: .75rem;
+}
+
+.pcoded .pcoded-navbar[navbar-theme="theme1"] .pcoded-item > li.active > a {
+    color: #FE8A7D !important;
+}
+
+span.not-set{
+    color: #FE8A7D;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 573px){
+    .semi-nav-item{
+        width: calc(100% / 2)!important;
+    }
+}
+

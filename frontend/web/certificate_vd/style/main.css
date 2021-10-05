@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "GilroyBold";
+  src: url("../fonts/Gilroy/GILROY-BOLD.TTF");
+}
+
+@font-face {
+  font-family: "GilroyExtraBold";
+  src: url("../fonts/Gilroy/GILROY-EXTRABOLD.TTF");
+}
+
+@font-face {
+  font-family: "GilroySemiBold";
+  src: url("../fonts/Gilroy/GILROY-SEMIBOLD.TTF");
+}
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .certificate {
+  min-width: 2480px;
+  min-height: 3508px;
+  position: relative;
+}
+
+body .certificate .certificate__fname {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  padding-right: 50px;
+  padding-left: 50px;
+  height: 200px;
+}
+
+body .certificate .certificate__fname .certificate__fname--text {
+  font-size: 30px!important;
+  font-weight: bold;
+  color: #ec5252;
+}
+
+
+body .certificate .certificate__course--text {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+body .certificate .certificate__info {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  font-size: 16px!important;
+  padding-top: 100px;
+  /*padding-bottom: 300px;*/
+  height: 400px;
+  font-weight: bold;
+}
+
+body .certificate .seal {
+  width: 700px;
+  position: absolute;
+  bottom: -10px;
+  left: 590px;
+}
+
+body .certificate .signature {
+  width: 400px;
+  position: absolute;
+  bottom: 200px;
+  left: 1200px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "GilroyBold";
+  src: url("../fonts/Gilroy/GILROY-BOLD.TTF");
+}
+@font-face {
+  font-family: "GilroyExtraBold";
+  src: url("../fonts/Gilroy/GILROY-EXTRABOLD.TTF");
+}
+@font-face {
+  font-family: "GilroySemiBold";
+  src: url("../fonts/Gilroy/GILROY-SEMIBOLD.TTF");
+}
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .certificate {
+    min-width: 2480px;
+    min-height: 3508px;
+    position: relative;
+    .certificate__img {
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .certificate__fname {
+      position: absolute;
+      width: 100%;
+      top: 1500px;
+      text-align: center;
+      .certificate__fname--text {
+        font-size: 114px;
+        font-family: "GilroyBold";
+        font-weight: normal;
+        color: #ec5252;
+      }
+    }
+    .certificate__course {
+      position: absolute;
+      top: 1750px;
+      width: 100%;
+      text-align: center;
+      .certificate__course--text {
+        font-family: "GilroyExtraBold";
+        font-size: 152px;
+        line-height: 158px;
+      }
+    }
+    .certificate__info {
+      font-family: "GilroyBold";
+      text-align: center;
+      position: absolute;
+      top: 2450px;
+      width: 100%;
+      font-size: 44px;
+    }
+    .seal {
+      width: 700px;
+      position: absolute;
+      bottom: -10px;
+      left: 590px;
+    }
+    .signature {
+      width: 400px;
+      position: absolute;
+      bottom: 200px;
+      left: 1200px;
+    }
+  }
+}

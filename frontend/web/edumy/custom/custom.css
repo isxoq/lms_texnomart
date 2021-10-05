@@ -1,0 +1,138 @@
+/*
+ * @author Shukurullo Odilov <shukurullo0321@gmail.com>
+ * Date: 27.05.2021, 16:41
+ */
+
+.course-hidden {
+    display: none;
+}
+
+/****  START COURSE CARD HOVER A */
+.top_courses:hover .thumb .overlay .tag, .top_courses:hover .thumb .overlay span.tc_preview_course {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.top_courses .thumb .overlay span.tc_preview_course {
+    bottom: 0;
+    color: #ffffff;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+}
+
+.top_courses .thumb .overlay .tag, .top_courses .thumb .overlay span.tc_preview_course {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+/****  END COURSE CARD HOVER A */
+
+
+/****  START RATINGS STARS LAST ITEM */
+.shop_grid .details ul li:last-child a, .sspd_review ul li:last-child a {
+    color: #d0d23c;
+}
+
+/****  END RATINGS STARS LAST ITEM */
+
+
+/****  START COURCE DETAIL SIDEBAR */
+.feature_course_widget .price {
+    font-size: 30px;
+    font-family: "Nunito";
+    color: #0a0a0a;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.feature_course_widget .price span {
+    font-size: 15px;
+    font-family: "Open Sans";
+    color: rgb(79, 79, 79);
+    line-height: 2.667;
+    font-weight: normal;
+}
+
+.feature_course_widget .price small {
+    font-size: 14px;
+    font-family: "Open Sans";
+    color: rgb(193, 193, 193);
+    line-height: 2.857;
+}
+
+/****  END COURCE DETAIL SIDEBAR */
+
+.payment_widget_btn .btn-block:hover {
+    border: inherit;
+}
+
+.vertical-wrapper .content-vertical .mega-vertical-menu > li .dropdown-menu.vertical-megamenu {
+    padding: 0;
+}
+
+
+/*Start loading content*/
+.loader-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .4) url('/images/loading2.gif') 50% 50% no-repeat;
+}
+
+body.loading .loader-modal {
+    overflow: hidden;
+}
+
+body.loading .loader-modal {
+    display: block;
+}
+
+@media only screen and (max-width: 992px) {
+    .home1-mainslider .banner-style-one .banner-title {
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .banner-style-one .owl-dots {
+        bottom: 20px !important;
+    }
+}
+
+.home1-mainslider .main-banner-wrapper .owl-stage-outer {
+    height: 450px;
+}
+
+.top_courses .thumb .overlay .discount-badge {
+    right: 10px !important;
+    top: 10px !important;
+}
+
+.top_courses .thumb .overlay .discount-badge span {
+    background-color: #2441e7 !important;
+}

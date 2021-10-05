@@ -1,0 +1,7 @@
+● ffpmeg_stream.service - FFMPEG stream Service
+   Loaded: loaded (/lib/systemd/system/ffpmeg_stream.service; enabled; vendor preset: enabled)
+   Active: inactive (dead) since Thu 2021-01-28 12:27:53 +05; 8s ago
+  Process: 43261 ExecStart=/usr/bin/python3 /home/admin/web/onlayndars.uz/virtualdars/frontend/web/pythonApp/hi.py (code=killed, signal=HUP)
+ Main PID: 43261 (code=killed, signal=HUP)
+
+янв 28 12:27:53 virtualdars systemd[1]: Started FFMPEG stream Service.

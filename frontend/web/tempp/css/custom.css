@@ -1,0 +1,148 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+
+@media (max-width: 991px) {
+    header.header.sticky {
+        padding: 15px 20px;
+    }
+
+    header.header a.btn_mobile .hamburger {
+        margin-top: 5px;
+    }
+}
+
+/*
+* Top menuda lupani rasmi to'g'ri joylashishi uchun
+*/
+@media (min-width: 992px) {
+    ul#top_menu.top-menu-user {
+        margin-top: 9px;
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+
+    /*
+    * START
+    * Top menuda oxirgi menyuda ichki menyusini to'g'ri joylashishi uchun, ya'ni ekranning o'ng tarafiga kirib ketmasligi uchun
+    */
+    .main-menu ul li:last-child ul {
+        right: 0;
+        left: auto;
+    }
+
+    .main-menu ul li:last-child ul:before {
+        right: 15%;
+        left: initial;
+    }
+
+    /** END */
+
+}
+
+ul.list_ok li::before {
+
+    font-family: 'ElegantIcons';
+    content: "\52";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 22px;
+    color: #8dc63f;
+
+}
+
+.list_lessons ul li a.video-icon-link::before {
+    font-family: 'ElegantIcons';
+    content: "\49";
+    margin-right: 10px;
+}
+
+.sbHolder {
+
+    min-width: 200px;
+
+}
+
+#hero_in.courses::before {
+    background: url(http://via.placeholder.com/1600x1067/ccc/fff/bg_courses.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*
+* Course card qismidagi title minimal balandligi (2 qator matn)
+*/
+.box_grid .wrapper h3 {
+
+    min-height: 48px;
+}
+
+/*
+* Course card qismidagi short description minimal balandligi (4 qator matn)
+*/
+.box_grid .wrapper p {
+    min-height: 90px;
+}
+
+/*
+*   Formada labelga *  qo'shishni oldini oladi
+*/
+.form-group.required .has-star:not(.custom-control-label)::after, .is-required::after {
+    content: ""
+}
+
+/*
+*  Start Footer copy righter
+*/
+
+#copy a{
+    color: #fff;
+    opacity: 0.5;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+#copy a:hover,#copy a:focus {
+    opacity: 1;
+}
+
+/*
+*  End Footer copy righter
+*/
+
+/*
+*  Start Wished Button
+*/
+
+.box_grid a.wished_bt::after {
+    content: "\e089"!important;
+}
+
+.box_list a.wished_bt::after {
+    content: "\e089"!important;
+    color: #92278f!important;
+}
+
+/*
+*  End Wished Button
+*/
+
+
+.toast {
+    opacity: 1 !important;
+}
+
+#toast-container > div {
+    opacity: 1 !important;
+}
+
+/*.list_lessons ul li{*/
+/*    min-height: 50px;*/
+/*}*/

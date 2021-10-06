@@ -79,21 +79,6 @@ $this->registerMetaTag(['property' => "twitter:image", 'content' => $imageUrl], 
 
         <?php $this->head() ?>
 
-        <?php if ($_SERVER['HTTP_HOST'] != "localhost"): ?>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-LT6TVGFVXZ"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-
-                function gtag() {
-                    dataLayer.push(arguments);
-                }
-
-                gtag('js', new Date());
-
-                gtag('config', 'G-LT6TVGFVXZ');
-            </script>
-        <?php endif ?>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

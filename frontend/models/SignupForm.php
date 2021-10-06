@@ -136,15 +136,21 @@ class SignupForm extends Model
      */
     public function generateCode()
     {
-        $code = mt_rand(10000, 99999);
-        if ($this->sendCodeViaSms($code)){
+        $code = mt_rand(12345, 12345);
 
-            Yii::$app->session->set('_signup_phone_number', $this->phone);
-            Yii::$app->session->set('_signup_verification_code', $code);
-            Yii::$app->session->set('_signup_verification_time', time());
-            return true;
-        }
-        return false;
+        Yii::$app->session->set('_signup_phone_number', $this->phone);
+        Yii::$app->session->set('_signup_verification_code', $code);
+        Yii::$app->session->set('_signup_verification_time', time());
+
+        return true;
+//        if ($this->sendCodeViaSms($code)){
+//
+//            Yii::$app->session->set('_signup_phone_number', $this->phone);
+//            Yii::$app->session->set('_signup_verification_code', $code);
+//            Yii::$app->session->set('_signup_verification_time', time());
+//            return true;
+//        }
+//        return false;
     }
 
     /**

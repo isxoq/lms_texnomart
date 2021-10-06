@@ -22,5 +22,5 @@ $email = settings('site', 'company_email');
 
 <?= $this->render('footer/_footer_1_top') ?>
 <?= $this->render('footer/_footer_2_middle') ?>
-<?= $this->render('footer/_footer_3_bottom') ?>
+<?//= $this->render('footer/_footer_3_bottom') ?>
 

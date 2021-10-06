@@ -15,10 +15,10 @@ $this->params['renderBreadcrumb'] = false;
 <?= $this->render('_indexPartials/_1_slider') ?>
 <?= $this->render('_indexPartials/_1_latest_courses') ?>
 <?= $this->render('_indexPartials/_2_popular_courses') ?>
-<?= $this->render('_indexPartials/_divider') ?>
+<?//= $this->render('_indexPartials/_divider') ?>
 <?//= $this->render('_indexPartials/_3_about') ?>
 <?= $this->render('_indexPartials/_3_categories') ?>
-<?= $this->render('_indexPartials/_5_testimonials') ?>
+<?//= $this->render('_indexPartials/_5_testimonials') ?>
 <?//= $this->render('_indexPartials/_6_divider') ?>
 
 

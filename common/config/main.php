@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => 'onlinedars.uz',
+    'name' => 'LMS Texnomart',
     'timeZone' => 'Asia/Tashkent',
 
     'aliases' => [

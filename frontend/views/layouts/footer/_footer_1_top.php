@@ -44,30 +44,7 @@ $categories = \frontend\modules\mbapp\models\Category::find()->active()->asArray
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
-                <div class="footer_apps_widget">
-                    <h4>Mobile</h4>
-                    <div class="app_grid">
 
-                        <a href="https://play.google.com/store/apps/details?id=info.texnoman.virtualdarsuz" >
-                            <button class="play_store_btn btn-dark">
-                                <span class="icon">
-                                    <span class="flaticon-google-play"></span>
-                                </span>
-                                <span class="title">Google Play</span>
-                                <span class="subtitle">Virtualdars ilovasini yuklab oling</span>
-                            </button>
-                        </a>
-                        <button class="apple_btn btn-dark mt-3">
-                            <span class="icon">
-									<span class="flaticon-apple"></span>
-								</span>
-                            <span class="title">App Store</span>
-                            <span class="subtitle">Ishlab chiqish jarayonida</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

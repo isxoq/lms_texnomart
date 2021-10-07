@@ -14,6 +14,7 @@ use common\models\User;
 use frontend\components\AuthHandler;
 use frontend\components\UserHistoryBehavior;
 use kartik\mpdf\Pdf;
+use stmswitcher\Yii2LdapAuth\Model\LdapUser;
 use Yii;
 use backend\modules\usermanager\models\TeacherApplication;
 use backend\modules\contactmanager\models\Contact;
@@ -60,30 +61,6 @@ class AuthController extends FrontendController
     public function actionLogin()
     {
 
-        if ($this->isAjax) {
-
-            if (!Yii::$app->user->isGuest) {
-                forbidden();
-            }
-            $this->formatJson;
-            $model = new LoginForm();
-            if ($model->load(Yii::$app->request->post()) && $model->login()) {
-                return [
-                    'redirect' => to(['site/index'])
-                ];
-            }
-
-            $model->password = '';
-            return [
-                'title' => t('Login to the site'),
-                'content' => $this->renderAjax('loginAjax', [
-                    'model' => $model,
-                ]),
-                'footer' => Html::submitButton(t('Enter'), ['class' => 'btn_1 rounded']),
-            ];
-        }
-
-
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -92,7 +69,12 @@ class AuthController extends FrontendController
 
         $model = new LoginForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $user = LdapUser::findIdentity($model->username);
+            dd(Yii::$app->ldapAuth->authenticate($user->getDn(), $model->password));
+            dd($user);
+
             return $this->goBack();
         } else {
             $model->password = '';
@@ -109,6 +91,13 @@ class AuthController extends FrontendController
         return $this->redirect(['site/index']);
     }
 
+
+    public function actionLdap()
+    {
+        $user = LdapUser::findIdentity("lms_ldap");
+        dd(Yii::$app->ldapAuth->authenticate($user->getDn(), "1234qwer!@#$"));
+        dd($user);
+    }
 
 }
 

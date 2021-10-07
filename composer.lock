@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb727540ecaa74e84930cd6269b33b0f",
+    "content-hash": "ace613af70debc425ae4efc3a66534fc",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -5490,6 +5490,54 @@
                 "source": "https://github.com/smarty-php/smarty/tree/v3.1.39"
             },
             "time": "2021-02-17T21:57:51+00:00"
+        },
+        {
+            "name": "stmswitcher/yii2-ldap-auth",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stmswitcher/yii2-ldap-auth.git",
+                "reference": "70dd2c9994fe066e8c6f9f2f98c743f8bc7d2304"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stmswitcher/yii2-ldap-auth/zipball/70dd2c9994fe066e8c6f9f2f98c743f8bc7d2304",
+                "reference": "70dd2c9994fe066e8c6f9f2f98c743f8bc7d2304",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ldap": "*",
+                "php": ">= 7.3",
+                "yiisoft/yii2": "~2.0.14"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "stmswitcher\\Yii2LdapAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Alexandrov",
+                    "email": "stm.switcher@gmail.com"
+                }
+            ],
+            "description": "Simple library to handle auth over LDAP in Yii 2 applications.",
+            "keywords": [
+                "auth",
+                "extension",
+                "ldap",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/stmswitcher/yii2-ldap-auth/issues",
+                "source": "https://github.com/stmswitcher/yii2-ldap-auth/tree/0.1"
+            },
+            "time": "2020-07-01T14:27:42+00:00"
         },
         {
             "name": "studio-42/elfinder",

@@ -60,7 +60,8 @@
     "kartik-v/yii2-widget-rating": "dev-master",
     "yiisoft/yii2-authclient": "~2.1.0",
     "ext-curl": "*",
-    "kartik-v/yii2-password": "dev-master"
+    "kartik-v/yii2-password": "dev-master",
+    "stmswitcher/yii2-ldap-auth": "^0.1.0"
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.1.0",

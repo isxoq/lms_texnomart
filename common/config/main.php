@@ -9,7 +9,7 @@ return [
         '@homeUrl' => '/',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'language' => 'uz',
+    'language' => 'ru',
     'components' => [
 
         'acf' => [

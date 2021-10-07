@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use stmswitcher\Yii2LdapAuth\Model\LdapUser;
 use Yii;
 use yii\base\Model;
 use common\models\User;
@@ -52,12 +53,23 @@ class LoginForm extends Model
      * @param string $attribute the attribute currently being validated
      * @param array $params the additional name-value pairs given in the rule
      */
+//    public function validatePassword($attribute, $params)
+//    {
+//        if (!$this->hasErrors()) {
+//            $user = $this->getUser();
+//            if (!$user || !$user->validatePassword($this->password)) {
+//                $this->addError($attribute, t('Incorrect username or password.'));
+//            }
+//        }
+//    }
+
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, t('Incorrect username or password.'));
+
+            $user = \frontend\components\LdapUser::findIdentity($this->username);
+            if (!Yii::$app->ldapAuth->authenticate($user->getDn(), $this->password)) {
+                $this->addError($attribute, 'Incorrect username or password.');
             }
         }
     }
@@ -67,15 +79,43 @@ class LoginForm extends Model
      *
      * @return bool whether the user is logged in successfully
      */
+//    public function login()
+//    {
+//        if ($this->validate()) {
+//            $user = $this->getUser();
+//            $user->generateAuthKey();
+//            $user->save(false);
+//            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+//        }
+//
+//        return false;
+//    }
+
+
     public function login()
     {
         if ($this->validate()) {
-            $user = $this->getUser();
-            $user->generateAuthKey();
-            $user->save(false);
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
-        }
 
+            $user = User::findByUsername($this->username);
+            if (!$user) {
+                $user = new User();
+                $user->username = $this->username;
+                $user->password = Yii::$app->security->generatePasswordHash($this->username);
+                $user->auth_key = Yii::$app->security->generateRandomString(32);
+                $user->token = Yii::$app->security->generateRandomString(32);
+                $user->firstname = $this->username;
+                $user->status = User::STATUS_ACTIVE;
+                if (!$user->save()) {
+                    dd($user->errors);
+                }
+            }
+
+            return Yii::$app->user->login(
+                $user,
+                $this->rememberMe
+                    ? 3600 * 24 * 30 : 0
+            );
+        }
         return false;
     }
 
@@ -89,7 +129,7 @@ class LoginForm extends Model
         if ($this->_user === null) {
 
             $user = User::findOne(['email' => $this->username, 'status' => User::STATUS_ACTIVE]);
-            if ($user == null){
+            if ($user == null) {
 
                 $username = $this->normalizePhoneNumber($this->username);
                 $user = User::findOne(['phone' => $username, 'status' => User::STATUS_ACTIVE]);
@@ -104,12 +144,12 @@ class LoginForm extends Model
      * @param null|string $phoneNumber
      * @return mixed|string|null
      */
-    private function normalizePhoneNumber($phoneNumber=null)
+    private function normalizePhoneNumber($phoneNumber = null)
     {
         $phoneNumber = Yii::$app->help->clearPhoneNumber($phoneNumber);
         $length = strlen($phoneNumber);
-        if ($length == 9){
-            return "998".$phoneNumber;
+        if ($length == 9) {
+            return "998" . $phoneNumber;
         }
         return $phoneNumber;
     }
@@ -117,7 +157,7 @@ class LoginForm extends Model
     public function getErrorMessage()
     {
         $firstErrors = $this->getFirstErrors();
-        if (empty($firstErrors)){
+        if (empty($firstErrors)) {
             return null;
         }
         $values = array_values($firstErrors);

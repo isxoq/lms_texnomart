@@ -13,6 +13,32 @@ return [
     'homeUrl' => "/",
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'ldapAuth' => [
+//            'class' => 'frontend\components\LdapAuth',
+            'class' => '\stmswitcher\Yii2LdapAuth\LdapAuth',
+            'host' => '192.168.0.200',
+            'baseDn' => 'DC=office,DC=tm,DC=uz',
+            'searchUserName' => 'lms_ldap',
+            'searchUserPassword' => '1234qwer!@#$',
+
+            // optional parameters and their default values
+            'ldapVersion' => 3,             // LDAP version
+            'protocol' => 'ldap://',       // Protocol to use
+            'followReferrals' => false,     // If connector should follow referrals
+            'port' => 389,                  // Port to connect to
+            'loginAttribute' => 'cn',      // Identifying user attribute to look up for
+            'ldapObjectClass' => 'person',  // Class of user objects to look up for
+            'timeout' => 10,                // Operation timeout, seconds
+            'connectTimeout' => 5,          // Connect timeout, seconds
+        ],
+
+        'user' => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+//            'identityClass' => '\stmswitcher\Yii2LdapAuth\Model\LdapUser',
+        ],
+
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
             'clients' => [
@@ -60,11 +86,6 @@ return [
         'request' => [
             'baseUrl' => "/",
             'csrfParam' => '_csrf-frontend',
-        ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
@@ -133,7 +154,7 @@ return [
 
             ],
         ],
-        'assetManager' => require __DIR__ .'/_asset-manager-config.php',
+        'assetManager' => require __DIR__ . '/_asset-manager-config.php',
     ],
     'modules' => [
         'profile' => [
